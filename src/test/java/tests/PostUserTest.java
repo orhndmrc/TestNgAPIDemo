@@ -18,7 +18,7 @@ public class PostUserTest extends TestUtil {
     public void addSingleUser(){
         requestSpecification().body(data.createUser());
         executeAPI("POST",basePath);
-        responseSpecification(201);
+        responseSpecification(200);
         getResponse();
 
     }

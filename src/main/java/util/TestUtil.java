@@ -22,7 +22,7 @@ public class TestUtil {
     Response res;
     public RequestSpecification requestSpecification(){
        request = given().log().all().spec(new RequestSpecBuilder().setBaseUri(ConfigReader.getProperty("baseURI")).
-           addHeader("Authorization",ConfigReader.getProperty("token")).setContentType(ContentType.JSON).build());
+           addHeader("Authorization","Bearer "+ConfigReader.getProperty("token")).setContentType(ContentType.JSON).build());
        return request;
     }
     public void responseSpecification(int statusCose){
@@ -81,6 +81,9 @@ public class TestUtil {
     public String getBasePath(String resource){
         ResourcePaths rsc =ResourcePaths.valueOf(resource);
         return rsc.getResource();
+    }
+    public void deserializeObject(String pojoClassName){
+        //response.getBody().as(pojoClassName.class)
     }
 
 }

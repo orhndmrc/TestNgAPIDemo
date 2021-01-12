@@ -29,7 +29,7 @@ public class GetUsersTest extends TestUtil {
     @Test(description = "test case name = get a single user's details")
     @Severity(SeverityLevel.CRITICAL)
     public void getUserDetails(){
-        requestSpecification().queryParam("name","Andrea Gracanin");
+        requestSpecification().queryParam("name","Mustafa");
         executeAPI("GET",basePath);
         responseSpecification(200);
         Response response = getResponse();
