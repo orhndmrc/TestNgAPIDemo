@@ -25,8 +25,8 @@ public class TestUtil {
            addHeader("Authorization","Bearer "+ConfigReader.getProperty("token")).setContentType(ContentType.JSON).build());
        return request;
     }
-    public void responseSpecification(int statusCose){
-         resspec = new ResponseSpecBuilder().expectStatusCode(statusCose).expectContentType(ContentType.JSON).build();
+    public void responseSpecification(int statusCode){
+         resspec = new ResponseSpecBuilder().expectStatusCode(statusCode).expectContentType(ContentType.JSON).build();
 
     }
     public void executeAPI(String httpMethod, String basePath){
@@ -82,8 +82,9 @@ public class TestUtil {
         ResourcePaths rsc =ResourcePaths.valueOf(resource);
         return rsc.getResource();
     }
-    public void deserializeObject(String pojoClassName){
-        //response.getBody().as(pojoClassName.class)
+    public void deserializeObject(Class pojoClassName){
+      
+
     }
 
 }
